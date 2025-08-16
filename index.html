@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Minimal Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#" aria-label="Homepage">
+          <img src="logo.svg" alt="Site logo" class="logo" />
+          <span>DevOps Workflow</span>
+        </a>
+        <nav class="nav">
+          <a href="#features">Features</a>
+          <a href="#docs">Docs</a>
+          <a class="btn" href="#get-started">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="get-started">
+        <div class="container">
+          <div class="hero-copy">
+            <h1><span class="hi">Hi,</span> ship faster with a clean Git workflow.</h1>
+            <p>Drop this static page on any server (Nginx, GitHub Pages, etc.). Tweak colors and content in <code>styles.css</code> and the config files below.</p>
+            <div class="cta">
+              <a class="btn primary" href="#features">See Features</a>
+              <a class="btn ghost" href="#docs">Read Docs</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="orb"></div>
+            <div class="card floating">
+              <code>$ git checkout -b feature/login</code><br/>
+              <code>$ git commit -m "feat: add oauth"</code><br/>
+              <code>$ gh pr create --fill</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features">
+        <div class="container grid">
+          <article class="feature">
+            <h3>Simple</h3>
+            <p>One HTML file and one CSS file. No build step required.</p>
+          </article>
+          <article class="feature">
+            <h3>Accessible</h3>
+            <p>Semantic markup, large touch targets, and high contrast.</p>
+          </article>
+          <article class="feature">
+            <h3>Customizable</h3>
+            <p>Change the theme with CSS variables. Add your logo as <code>logo.svg</code>.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Your Name. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script>
+      // Auto-update year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

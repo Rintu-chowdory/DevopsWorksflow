@@ -1,0 +1,15 @@
+{
+  "project": "DevOpsWorkflow",
+  "version": "1.0.0",
+  "author": "Rintu-chowdory",
+  "description": "A simple starter project with HTML, CSS, JSON, and YAML.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourname/devopsworkflow.git"
+  },
+  "settings": {
+    "theme": "dark",
+    "features": ["simple", "accessible", "customizable"]
+  }
+}
