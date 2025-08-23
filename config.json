@@ -6,7 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
+<<<<<<< HEAD
     "url": "https://github.com/Rintu-chowdory/DevopsWorksflow.git"
+=======
+    "url": "https://github.com/Rintu-chowdory/devopsworkflow.git"
+>>>>>>> 2e5fc605c68443338770d3bdab51e332036d0880
   },
   "settings": {
     "theme": "dark",
