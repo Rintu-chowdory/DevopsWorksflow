@@ -5,7 +5,7 @@
 [![Live Site](https://img.shields.io/badge/live-rintu--chowdory.github.io-38bdf8)](https://rintu-chowdory.github.io/DevopsWorksflow/)
 
 My personal DevOps portfolio site — and a working reference implementation of a
-modern CI/CD pipeline. The site itself is plain HTML & CSS (no build step), but
+modern CI/CD pipeline. The site itself is plain HTML, CSS & vanilla JS (no build step, and a 3D autumn-leaves background for good measure), but
 everything around it is automated:
 
 **Every push to `main` triggers:**
@@ -30,7 +30,8 @@ everything around it is automated:
 ```
 site/                    # the portfolio site (served by Pages + the Docker image)
   index.html
-  assets/css/styles.css
+  assets/css/styles.css   # dark theme + leaf animation styles
+  assets/js/leaves.js     # 3D falling-leaves background (vanilla JS, no deps)
   assets/images/         # logo + favicon
 Dockerfile               # nginx:alpine image serving the site, with healthcheck
 config.json / config.yaml# repo metadata
