@@ -1,16 +1,19 @@
 {
-  "project": "DevOpsWorkflow",
-  "version": "1.0.0",
-  "author": "Rintu-chowdory",
-  "description": "A simple starter project with HTML, CSS, JSON, and YAML.",
+  "project": "DevopsWorksflow",
+  "version": "2.0.0",
+  "author": "Rintu Chowdory",
+  "description": "Personal DevOps portfolio site with an automated CI/CD pipeline: HTML lint, multi-platform Docker builds to Docker Hub and GHCR, and GitHub Pages deployment.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rintu-chowdory/devopsworkflow.git"
+    "url": "https://github.com/Rintu-chowdory/DevopsWorksflow.git"
+  },
+  "site": {
+    "url": "https://rintu-chowdory.github.io/DevopsWorksflow/",
+    "source": "site/"
   },
   "settings": {
     "theme": "dark",
     "features": ["simple", "accessible", "customizable"]
   }
 }
-

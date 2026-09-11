@@ -3,6 +3,16 @@ name: CI/CD - Docker Build & Push (Multi-Platform)
 on:
   push:
     branches: [ "main" ]
+    paths: ["site/**", "Dockerfile", ".github/workflows/docker-build.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  DOCKERHUB_IMAGE: ${{ secrets.DOCKER_USERNAME }}/mywebsite
+  GHCR_IMAGE: ghcr.io/${{ github.repository }}
 
 jobs:
   docker:
@@ -13,22 +23,45 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # Login to Docker Hub
+      # Set up Docker Buildx (enables multi-platform builds)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Set up Docker Buildx (enables multi-platform builds)
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+      # Log in to GitHub Container Registry
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      # Build & Push multi-platform image
+      # Generate tags and labels from the commit
+      - name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            ${{ env.DOCKERHUB_IMAGE }}
+            ${{ env.GHCR_IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix=sha-
+
+      # Build & push multi-platform image with layer caching
       - name: Build and push Docker image (amd64 + arm64)
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ secrets.DOCKER_USERNAME }}/mywebsite:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rintu Chowdory · DevOps Engineer</title>
+  <meta name="description" content="DevOps engineer building CI/CD pipelines, containerized deployments, and production applications. Portfolio, skills, and live projects.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top">
+        <img src="assets/images/logo.svg" alt="RC monogram" width="34" height="34">
+        <span>rintu<b>.chowdory</b></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#pipeline">Pipeline</a>
+        <a class="btn btn-sm" href="mailto:chowdorydevops@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="terminal-line" aria-hidden="true"><span class="prompt">$</span> whoami</p>
+        <h1>Rintu Chowdory</h1>
+        <p class="hero-sub">DevOps Engineer <span class="amp">&amp;</span> Builder — I ship pipelines, containers, and applications that stay up in production.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/Rintu-chowdory" target="_blank" rel="noopener">View GitHub</a>
+          <a class="btn" href="#projects">See live projects</a>
+        </div>
+        <ul class="hero-facts">
+          <li><b>5</b> apps in production</li>
+          <li><b>3</b> cloud platforms</li>
+          <li><b>100%</b> automated deployments</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="hash">01.</span> About</h2>
+        <div class="about-grid">
+          <p>
+            I'm a DevOps engineer based in Germany, focused on automation that actually saves
+            time: CI/CD pipelines that deploy on every push, container images that run anywhere,
+            and servers that heal themselves.
+          </p>
+          <p>
+            My day-to-day toolkit spans the full lifecycle — from writing the application
+            (Python, Ruby on Rails, React) to packaging it (Docker, multi-platform builds) to
+            running it (AWS EC2, Render, Vercel, Nginx, systemd). I believe infrastructure
+            should be boring, repeatable, and version-controlled.
+          </p>
+        </div>
+        <div class="terminal-card">
+          <div class="terminal-bar"><i></i><i></i><i></i><span>~/portfolio — zsh</span></div>
+          <pre><code><span class="prompt">rintu@devops</span>:<span class="path">~</span>$ docker buildx build --platform linux/amd64,linux/arm64 .
+<span class="ok">✔</span> image pushed: mywebsite:latest, mywebsite:sha-136f0ea
+<span class="prompt">rintu@devops</span>:<span class="path">~</span>$ git push origin main
+<span class="ok">✔</span> lint passed · pages deployed · image tagged</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title"><span class="hash">02.</span> Skills</h2>
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>CI/CD &amp; Automation</h3>
+            <ul class="chips">
+              <li>GitHub Actions</li><li>Azure Pipelines</li><li>Git</li>
+              <li>GitHub CLI</li><li>Render Deploy API</li><li>Vercel CLI</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Containers &amp; Cloud</h3>
+            <ul class="chips">
+              <li>Docker</li><li>Multi-arch builds</li><li>Nginx</li>
+              <li>AWS EC2</li><li>Linux</li><li>systemd</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Development</h3>
+            <ul class="chips">
+              <li>Python</li><li>Flask</li><li>Ruby on Rails</li>
+              <li>React</li><li>JavaScript</li><li>Bash</li><li>SQL</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Data &amp; AI</h3>
+            <ul class="chips">
+              <li>PostgreSQL</li><li>TiDB Cloud</li><li>Groq API</li><li>Base44</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="hash">03.</span> Projects in production</h2>
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-head">
+              <h3>GitVerse</h3>
+              <span class="tag tag-live">● live</span>
+            </div>
+            <p>GitHub activity tracker with OAuth sign-in, repository monitoring, and scheduled health checks backed by TiDB Cloud Serverless.</p>
+            <p class="stack">React · Vite · TiDB Cloud · GitHub Actions</p>
+            <a href="https://gitverse-zeta.vercel.app" target="_blank" rel="noopener">gitverse-zeta.vercel.app ↗</a>
+          </article>
+          <article class="project">
+            <div class="project-head">
+              <h3>Rintu Shop</h3>
+              <span class="tag tag-live">● live</span>
+            </div>
+            <p>Full-stack e-commerce application on Ruby on Rails 8, deployed through a fully automated test-and-deploy pipeline to Render.</p>
+            <p class="stack">Rails 8 · Ruby 3.3 · PostgreSQL · Render</p>
+            <a href="https://rintu.onrender.com" target="_blank" rel="noopener">rintu.onrender.com ↗</a>
+          </article>
+          <article class="project">
+            <div class="project-head">
+              <h3>InvoiceFlow</h3>
+              <span class="tag tag-live">● live</span>
+            </div>
+            <p>Invoice &amp; billing management app with an AI assistant powered by the Groq API. Dual-hosted on Vercel and GitHub Pages.</p>
+            <p class="stack">React 18 · Vite · Tailwind · Groq AI</p>
+            <a href="https://invoiceflow-nine-flax.vercel.app" target="_blank" rel="noopener">invoiceflow-nine-flax.vercel.app ↗</a>
+          </article>
+          <article class="project">
+            <div class="project-head">
+              <h3>GrundgesetzGPT</h3>
+              <span class="tag tag-live">● live</span>
+            </div>
+            <p>AI chat assistant answering questions about the German constitution, with a static frontend on GitHub Pages and a Flask API on Render.</p>
+            <p class="stack">Flask · Groq AI · GitHub Pages · Render</p>
+            <a href="https://rintuchowdory.github.io/grundgesetz-gpt/" target="_blank" rel="noopener">rintuchowdory.github.io ↗</a>
+          </article>
+          <article class="project">
+            <div class="project-head">
+              <h3>Lumora</h3>
+              <span class="tag tag-live">● live</span>
+            </div>
+            <p>Modern portfolio landing page with a serverless contact form relayed to Gmail, self-hosted on Vercel.</p>
+            <p class="stack">Vite · Serverless Functions · Vercel</p>
+            <a href="https://lumora-navy-tau.vercel.app" target="_blank" rel="noopener">lumora-navy-tau.vercel.app ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline -->
+    <section id="pipeline" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title"><span class="hash">04.</span> This site is its own demo</h2>
+        <p class="pipeline-intro">
+          Every push to <code>main</code> runs the same pipeline I'd build for a client.
+        </p>
+        <ol class="pipeline-steps">
+          <li><span class="step-num">1</span><div><b>Lint</b>HTML validation with html-validate — no broken markup ships.</div></li>
+          <li><span class="step-num">2</span><div><b>Build</b>Multi-platform Docker image (amd64 + arm64) with layer caching.</div></li>
+          <li><span class="step-num">3</span><div><b>Push</b>Image published to Docker Hub, tagged <code>latest</code> and with the commit SHA.</div></li>
+          <li><span class="step-num">4</span><div><b>Deploy</b>Site published to GitHub Pages automatically after lint passes.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title"><span class="hash">05.</span> Contact</h2>
+        <p class="contact-lead">Want to talk pipelines, deployments, or a project?</p>
+        <div class="hero-actions contact-actions">
+          <a class="btn btn-primary" href="mailto:chowdorydevops@gmail.com">chowdorydevops@gmail.com</a>
+          <a class="btn" href="https://github.com/Rintu-chowdory" target="_blank" rel="noopener">github.com/Rintu-chowdory</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year">2026</span> Rintu Chowdory · Built with plain HTML &amp; CSS — deployed by GitHub Actions</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
